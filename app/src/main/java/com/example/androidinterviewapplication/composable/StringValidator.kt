@@ -18,6 +18,7 @@ import java.util.*
 
 @Composable
 fun StringValidatedView() {
+    // TODO center column both horizontally and vertically
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -25,6 +26,9 @@ fun StringValidatedView() {
         var stringToValidate by remember { mutableStateOf("") }
         var isValid by remember { mutableStateOf(false) }
 
+        // TODO change this to an outlined text field
+        // TODO add label to text field and extract string to strings.xml
+        // TODO add padding of 16dp
         TextField(
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Blue,
@@ -36,14 +40,20 @@ fun StringValidatedView() {
             onValueChange = { stringToValidate = it }
         )
 
+        // TODO change color of button to Colors.Blue
+        // TODO add padding of 16dp
         Button(
             colors = ButtonDefaults.buttonColors(Color.Blue),
             modifier = Modifier.padding(16.dp),
             onClick = { isValid = bracketValidator(stringToValidate) }
         ) {
+            // TODO extract string to strings.xml
             Text(text = stringResource(buttonString))
         }
 
+        // TODO make the text italic
+        // TODO make the text bold
+        // TODO add padding of 16dp
         Text(
             isValid.toString(),
             fontStyle = FontStyle.Italic,
@@ -53,6 +63,7 @@ fun StringValidatedView() {
     }
 }
 
+// TODO add logic to validate brackets
 fun bracketValidator(vString: String): Boolean {
     val map = HashMap<Char, Char>()
     map['('] = ')'
@@ -62,9 +73,9 @@ fun bracketValidator(vString: String): Boolean {
     for (b in vString.toCharArray()) {
         if (map.containsKey(b))
             brackets.push(b)
-        else if (!brackets.isEmpty() && map[brackets.peek()] == b)
+         else if (!brackets.isEmpty() && map[brackets.peek()] == b)
             brackets.pop()
-        else
+         else
             return false
     }
     return brackets.isEmpty()

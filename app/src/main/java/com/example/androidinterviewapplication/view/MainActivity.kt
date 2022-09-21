@@ -1,4 +1,4 @@
-package com.example.androidinterviewapplication
+package com.example.androidinterviewapplication.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
