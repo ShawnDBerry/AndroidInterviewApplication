@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android Interview Application</string>
+    <string name="buttonString">Validate</string>
+    <string name="textFieldLabel">Enter Text</string>
+</resources>
