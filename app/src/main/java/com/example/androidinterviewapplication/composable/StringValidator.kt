@@ -11,9 +11,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidinterviewapplication.R.string.buttonString
 import com.example.androidinterviewapplication.R.string.textFieldLabel
+import com.example.androidinterviewapplication.ui.theme.AndroidInterviewApplicationTheme
 import java.util.*
 
 @Composable
@@ -60,6 +62,14 @@ fun StringValidatedView() {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(16.dp)
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    AndroidInterviewApplicationTheme {
+        StringValidatedView()
     }
 }
 
