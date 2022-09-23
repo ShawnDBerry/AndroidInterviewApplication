@@ -52,8 +52,8 @@ fun StringValidatedView() {
             colors = ButtonDefaults.buttonColors(Color.Blue),
             modifier = Modifier.padding(16.dp),
             onClick = {
-                isValid = bracketValidator(stringToValidate)
                 focusManager.clearFocus()
+                isValid = bracketValidator(stringToValidate)
             }
         ) {
             // TODO extract string to strings.xml
