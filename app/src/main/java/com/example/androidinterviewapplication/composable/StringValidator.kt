@@ -46,7 +46,6 @@ fun StringValidatedView() {
             value = stringToValidate,
             onValueChange = { stringToValidate = it }
         )
-
         // TODO change color of button to Colors.Blue
         // TODO add padding of 16dp
         Button(
